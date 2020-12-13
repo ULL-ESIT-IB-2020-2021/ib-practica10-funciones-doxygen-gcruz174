@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
   if (!AreParametersValid(argv)) {
     std::cout << "Alguno de los parametros introducidos es invalido. "
               << std::endl;
-    return 0;
+    exit(EXIT_FAILURE);
   }
 
   std::ifstream input_file(argv[1], std::ifstream::in);

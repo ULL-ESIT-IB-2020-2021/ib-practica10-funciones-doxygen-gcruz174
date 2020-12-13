@@ -59,8 +59,8 @@ void Usage(int argc, char *argv[]) {
 bool AreParametersValid(char *argv[]) {
   if (argv[3][0] != '1' && argv[3][0] != '2') return false;
 
-  std::string parameter4{argv[4]};
-  if (argv[3][0] == '2' && !IsInteger(parameter4)) {
+  std::string parameter_4{argv[4]};
+  if (argv[3][0] == '2' && !IsInteger(parameter_4)) {
     return false;
   }
 
@@ -71,11 +71,11 @@ bool AreParametersValid(char *argv[]) {
 
 /** Comprueba si la string introducida es un número entero.
  *
- *  @param[in] str String que contiene el número.
+ *  @param[in] number String que contiene el número.
  *  @return si el número es un entero.
  */
-bool IsInteger(std::string str) {
-  for (auto c : str) {
+bool IsInteger(std::string number) {
+  for (auto c : number) {
     if (c < 48 || c > 57) return false;
   }
 
@@ -95,16 +95,16 @@ std::string XORCipher(std::string message, std::string key) {
   std::string encrypted_message{""};
 
   for (size_t i = 0; i < key.length(); i++) {
-    char xoredChar = key.at(i) ^ (char)128;
+    char xored_char = key.at(i) ^ (char)128;
 
-    encrypted_key.push_back(xoredChar);
+    encrypted_key.push_back(xored_char);
   }
 
   for (size_t i = 0; i < message.length(); i++) {
-    char xoredChar =
+    char xored_char =
         message.at(i) ^ encrypted_key.at(i % encrypted_key.length());
 
-    encrypted_message.push_back(xoredChar);
+    encrypted_message.push_back(xored_char);
   }
 
   return encrypted_message;
