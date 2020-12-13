@@ -13,9 +13,9 @@ CXXFLAGS = -std=c++14 -g -Wall	 # The C++ compiler options (C++14, preserve debu
 LDFLAGS =						             # The linker options (if any)
 
 # The all target builds all of the programs handled by the makefile.
-all: fibonacci_sum
+all: cripto
 
-fibonacci_sum: fibonacci_sum.o fibonacci_main.o
+cripto: funciones_cripto.o cripto.o
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 # Indicate that the all and clean targets do not
@@ -32,7 +32,7 @@ fibonacci_sum: fibonacci_sum.o fibonacci_main.o
 # and object files produced by the build process
 # We can use it for additional housekeeping purposes
 clean :
-	rm -rf *.o fibonacci_sum ../doc
+	rm -rf *.o cripto ../doc
 	rm -rf *~ basura b i
 	rm -rf a.out
 	find . -name '*~' -exec rm {} \;
