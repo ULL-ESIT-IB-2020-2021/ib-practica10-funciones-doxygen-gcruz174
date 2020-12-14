@@ -18,6 +18,9 @@ all: cripto
 cripto: funciones_cripto.o cripto.o
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
+cripto2: funciones_cripto2.o cripto2.o
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
 # Indicate that the all and clean targets do not
 # correspond to actual files.
 .PHONY: all clean
